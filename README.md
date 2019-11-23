@@ -14,4 +14,4 @@
 
 ## Proposito<br>
 
-Se realizara un juego con el proposito de mejorar las habilidades en las areas en las cuales se desempeñan los desarrolladores y que posteriormente puede ser probado por la comunidad con el objetivo de recibir feedback que sirva para mejorar.
+Se realizara un juego estilo plataforma con el proposito de mejorar las habilidades en las areas en las cuales se desempeñan los desarrolladores y que posteriormente puede ser probado por la comunidad con el objetivo de recibir feedback que sirva para mejorar.
