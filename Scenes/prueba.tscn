@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tiles/Tile_Dirt/Tile_Dirt.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/PJ/Pj.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/PJ/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Bosses/Boss1/Boss1.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.2, 0.2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 5
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 2, 0, 327707, 2, 0, 327708, 5, 0 )
+
+[node name="Pj" parent="." instance=ExtResource( 2 )]
+position = Vector2( 107.582, 199.707 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Initial_position" type="Position2D" parent="."]
+position = Vector2( 122.141, 196.166 )
+
+[node name="Boss_One" parent="." instance=ExtResource( 4 )]
+position = Vector2( 527.051, 191.69 )
+scale = Vector2( 0.25, 0.25 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Powerup6 (1).wav-dfc34d8f2ce322a314bc22ae903cf5c4.sample"
+
+[deps]
+
+source_file="res://Sounds/Enemy_Sounds/Powerup6 (1).wav"
+dest_files=[ "res://.import/Powerup6 (1).wav-dfc34d8f2ce322a314bc22ae903cf5c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

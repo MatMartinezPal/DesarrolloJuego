@@ -1,0 +1,199 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Scripts/CounterEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Enemigos/Counter/Idle/l0_Counter_Idle6.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting01.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting02.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting03.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting04.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting05.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting06.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting07.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting08.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting09.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting10.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Enemigos/Counter/Shooting/l0_Counter_Shooting11.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death01.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death02.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death03.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death04.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death05.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death06.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death07.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death08.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death09.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Enemigos/Counter/Death/l0_Death10.png" type="Texture" id=28]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Shooting",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "Death",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.0166, 63.0197 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 485.334, 150.687 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 34.3431, 66.0167 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 37.4181, 67.283 )
+
+[node name="Counter" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+self_modulate = Color( 0.96875, 0.96875, 0.96875, 1 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "Death"
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( 2, 0 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="." index="3"]
+
+position = Vector2( -77.0597, -4.36936 )
+
+[node name="Timer_Shooting" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Hitbox_Enemy" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Enemy" index="0"]
+
+position = Vector2( 3, 0 )
+shape = SubResource( 4 )
+
+[node name="Timer_Death_Animation" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Timer_Death" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="8"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="Damage_Area" type="Area2D" parent="." index="9"]
+
+editor/display_folded = true
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_Area" index="0"]
+
+position = Vector2( 3, 0 )
+shape = SubResource( 5 )
+
+[node name="Timer_Modulate" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+
+[connection signal="timeout" from="Timer_Shooting" to="." method="_on_Timer_Shooting_timeout"]
+
+[connection signal="area_entered" from="Hitbox_Enemy" to="." method="_on_Hitbox_Enemy_area_entered"]
+
+[connection signal="timeout" from="Timer_Death_Animation" to="." method="_on_Timer_Death_Animation_timeout"]
+
+[connection signal="timeout" from="Timer_Death" to="." method="_on_Timer_Death_timeout"]
+
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[connection signal="area_entered" from="Damage_Area" to="." method="_on_Damage_Area_area_entered"]
+
+[connection signal="timeout" from="Timer_Modulate" to="." method="_on_Timer_Modulate_timeout"]
+
+
